@@ -55,7 +55,9 @@ namespace Equations.Implementations
             if (other is null)
                 return false;
 
-            return A == other.A && B == other.B && C == other.C;
+            return Math.Abs(A - other.A) < Epsilon &&
+                   Math.Abs(B - other.B) < Epsilon &&
+                   Math.Abs(C - other.C) < Epsilon;
         }
 
         public override bool Equals(object obj)
