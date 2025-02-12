@@ -65,7 +65,7 @@ namespace Equations.Solver.Utilities
             Console.Clear();
             Console.WriteLine("Введите путь к файлу:");
             string filePath = Console.ReadLine();
-            List<QuadraticEquation> equations = ReadEquationsFromFile(filePath);
+            IEnumerable<QuadraticEquation> equations = ReadEquationsFromFile(filePath);
 
             foreach (var equation in equations)
             {
@@ -103,9 +103,9 @@ namespace Equations.Solver.Utilities
             return equation;
         }
 
-        public static List<QuadraticEquation> ReadEquationsFromFile(string filePath)
+        public static IList<QuadraticEquation> ReadEquationsFromFile(string filePath)
         {
-            var equations = new List<QuadraticEquation>();
+            IList<QuadraticEquation> equations = new List<QuadraticEquation>();
 
             try
             {
