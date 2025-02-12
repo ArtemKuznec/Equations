@@ -1,4 +1,5 @@
-﻿using Equations.Solver.Utilities;
+﻿using Equations.Exceptions;
+using Equations.Solver.Utilities;
 
 class Program
 {
@@ -28,9 +29,9 @@ class Program
                         break;
                 }
             }
-            catch (ArgumentException)
+            catch (InvalidQuadraticCoefficientException)
             {
-                Console.WriteLine("Аргумент 'a' квадратного уравнения не может быть равен 0.");
+                Console.WriteLine("Коэффициент 'a' квадратного уравнения не может быть равен 0.");
                 ConsoleUtilities.WaitForEnterInput();
             }
             catch (FormatException)

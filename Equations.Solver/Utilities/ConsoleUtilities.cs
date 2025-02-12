@@ -2,7 +2,7 @@
 using Equations.Implementations;
 using System.Globalization;
 
-namespace Equation.Solver.Utilities
+namespace Equations.Solver.Utilities
 {
     internal static class ConsoleUtilities
     {

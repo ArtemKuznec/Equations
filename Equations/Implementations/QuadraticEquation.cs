@@ -1,4 +1,5 @@
 ﻿using Equations.Enum;
+using Equations.Exceptions;
 using Equations.Interfaces;
 
 namespace Equations.Implementations
@@ -19,7 +20,7 @@ namespace Equations.Implementations
         {
             if (a == 0)
             {
-                throw new ArgumentException("При коэффициенте a = 0 уравнение не является квадратичным");
+                throw new InvalidQuadraticCoefficientException("При коэффициенте a = 0 уравнение не является квадратичным");
             }
 
             this.a = a;
