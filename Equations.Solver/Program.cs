@@ -22,6 +22,9 @@ class Program
                         ConsoleUtilities.SolveEquationsFromFile();
                         break;
                     case 3:
+                        ConsoleUtilities.SetRoundValue();
+                        break;
+                    case 4:
                         return;
                     default:
                         Console.WriteLine("Некорректный выбор.");

@@ -6,7 +6,9 @@ namespace Equations.Implementations
 {
     public class QuadraticEquation : IQuadraticEquation, IEquatable<QuadraticEquation>
     {
-        public static double Epsilon = 1e-10;
+        public static double Epsilon = 1e-3;
+        public static int RondNumber = 3;
+
 
         private double a = default;
         private double b = default;
@@ -37,13 +39,13 @@ namespace Equations.Implementations
                 double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
                 double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
 
-                return (QuadraticEquationRootStatus.TwoRoots, Math.Abs(x1) < Epsilon ? 0 : x1, Math.Abs(x2) < Epsilon ? 0 : x2);
+                return (QuadraticEquationRootStatus.TwoRoots, Math.Round(x1, RondNumber), Math.Round(x2, RondNumber));
             }
             else if (discriminant == 0)
             {
                 double x = -b / (2 * a);
 
-                return (QuadraticEquationRootStatus.OneRoot, x = Math.Abs(x) < Epsilon ? 0 : x, null);
+                return (QuadraticEquationRootStatus.OneRoot, Math.Round(x, RondNumber), null);
             }
             else
             {
@@ -83,5 +85,6 @@ namespace Equations.Implementations
         {
             return !(left == right);
         }
+
     }
 }

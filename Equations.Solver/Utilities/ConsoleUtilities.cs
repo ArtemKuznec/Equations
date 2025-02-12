@@ -11,7 +11,8 @@ namespace Equations.Solver.Utilities
             Console.WriteLine("Квадратное уравнение имеет вид: ax^2 + bx + c = 0, где a != 0");
             Console.WriteLine("Прочесть данные с клавиатуры - 1");
             Console.WriteLine("Прочесть данные из файла - 2");
-            Console.WriteLine("Выйти из приложения - 3");
+            Console.WriteLine("Округлять до указанного знака - 3");
+            Console.WriteLine("Выйти из приложения - 4");
         }
 
         public static void SolveEquationFromConsole()
@@ -26,6 +27,37 @@ namespace Equations.Solver.Utilities
 
             DisplayResults(equation);
             WaitForEnterInput();
+        }
+
+        public static void SetRoundValue()
+        {
+            Console.Clear();
+            int roundNumber;
+
+            while (true)
+            {
+                Console.Write("Введите положительное число в диапазоне от 0 до 15: ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out roundNumber))
+                {
+                    if (roundNumber > 0 && roundNumber <= 15)
+                    {
+                        QuadraticEquation.RondNumber = roundNumber;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Число должно быть больше 0 и меньше или равно 15.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Некорректный ввод. Пожалуйста, введите числовое значение.");
+                }
+            }
+
+            Console.Clear();
         }
 
         public static void SolveEquationsFromFile()

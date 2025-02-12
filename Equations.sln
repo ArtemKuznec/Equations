@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equations", "Equations\Equa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equations.Solver", "Equations.Solver\Equations.Solver.csproj", "{9208DF0E-C919-4CFD-8837-79FED9472C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equations.Tests", "Equations.Tests\Equations.Tests.csproj", "{5300506C-39A3-4C98-A76C-99DE2BF393BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9208DF0E-C919-4CFD-8837-79FED9472C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9208DF0E-C919-4CFD-8837-79FED9472C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9208DF0E-C919-4CFD-8837-79FED9472C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5300506C-39A3-4C98-A76C-99DE2BF393BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5300506C-39A3-4C98-A76C-99DE2BF393BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5300506C-39A3-4C98-A76C-99DE2BF393BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5300506C-39A3-4C98-A76C-99DE2BF393BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
