@@ -1,10 +1,45 @@
-﻿class Program
+﻿using Equations.Solver.Utilities;
+
+class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Квадратное уравнение имеет вид: ax^2 + bx + c = 0, где a != 0");
-        Console.WriteLine("Прочесть данные с клавиатуры - 1");
-        Console.WriteLine("Прочесть данные из файла - 2");
-        Console.WriteLine("Выйти из приложения - 3");
+        while (true)
+        {
+            ConsoleUtilities.ShowMenu();
+
+            try
+            {
+                int choiceInput = int.Parse(Console.ReadLine());
+
+                switch (choiceInput)
+                {
+                    case 1:
+                        ConsoleUtilities.SolveEquationFromConsole();
+                        break;
+                    case 2:
+                        ConsoleUtilities.SolveEquationsFromFile();
+                        break;
+                    case 3:
+                        return;
+                    default:
+                        Console.WriteLine("Некорректный выбор.");
+                        ConsoleUtilities.WaitForEnterInput();
+                        break;
+                }
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Аргумент 'a' квадратного уравнения не может быть равен 0.");
+                ConsoleUtilities.WaitForEnterInput();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Введен некорректный символ.");
+                ConsoleUtilities.WaitForEnterInput();
+            }
+
+            Console.Clear();
+        }
     }
 }
