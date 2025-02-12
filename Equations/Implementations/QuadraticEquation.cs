@@ -4,7 +4,7 @@ using Equations.Interfaces;
 
 namespace Equations.Implementations
 {
-    public class QuadraticEquation : IQuadraticEquation, IEquatable<QuadraticEquation>
+    public class QuadraticEquation 
     {
         public static double Epsilon = 1e-3;
         public static int RondNumber = 3;
